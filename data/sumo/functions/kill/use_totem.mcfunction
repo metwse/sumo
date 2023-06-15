@@ -6,7 +6,7 @@
 ######
 data get entity @s Inventory[{Slot:-106b,id:"minecraft:totem_of_undying"}]
 execute unless entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run kill @s[nbt=!{Inventory:[{id:"minecraft:totem_of_undying"}]}]
-execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run tellraw @s [{"selector":"@s","color":"yellow","bold":true},{"text":" totem kulllanarak hayatta kaldı.","bold":false}]
+execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run tellraw @a [{"selector":"@s","color":"yellow","bold":true},{"text":" totem kulllanarak hayatta kaldı.","bold":false}]
 execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run setblock ~ 255 ~ minecraft:barrel
 execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run item replace block ~ 255 ~ container.0 from entity @s weapon.offhand
 execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run item replace entity @s weapon.offhand with minecraft:totem_of_undying

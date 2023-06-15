@@ -6,7 +6,7 @@
 unless ('entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}]') {
     /kill @s[nbt=!{Inventory:[{id:"minecraft:totem_of_undying"}]}]
 } else {
-    /tellraw @s [{"selector":"@s","color":"yellow","bold":true},{"text":" totem kulllanarak hayatta kaldı.","bold":false}]
+    /tellraw @a [{"selector":"@s","color":"yellow","bold":true},{"text":" totem kulllanarak hayatta kaldı.","bold":false}]
     /setblock ~ 255 ~ minecraft:barrel
     /item replace block ~ 255 ~ container.0 from entity @s weapon.offhand
     /item replace entity @s weapon.offhand with minecraft:totem_of_undying

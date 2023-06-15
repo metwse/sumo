@@ -14,7 +14,7 @@ asat (@a) {
     if ('block ~ ~0.1 ~ minecraft:water') {
         run function kill/use_totem
         if ('entity @s[nbt={Health:0f}]') {
-            /tellraw @s [{"selector":"@s","color":"blue","bold":true},{"text":" boğuldu!","color":"blue","bold":false}]
+            /tellraw @a [{"selector":"@s","color":"blue","bold":true},{"text":" boğuldu!","color":"blue","bold":false}]
         }
     }
 }

@@ -4,10 +4,13 @@
 
 /kill @e[tag=w-worldCenter]
 /summon minecraft:snowball ~ -65 ~ {NoGravity:1b,Tags:["w-worldCenter"]}
+/forceload remove all
 as (@e[tag=w-worldCenter]) {
     /execute store result entity @s Pos[0] double 1 run data get storage w:world center[0]
     /execute store result entity @s Pos[2] double 1 run data get storage w:world center[1]
     at (@s) {
         /worldborder center ~ ~
+        /forceload add ~ ~
+        /setworldspawn ~ ~ ~
     }
 }

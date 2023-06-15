@@ -14,7 +14,7 @@ scoreboard objectives add w-world dummy
 data modify storage w:firework owner set value [0, 0, 0, 0]
 function sumo:items/items
 function sumo:shop/shop
-execute unless data storage w:world setup run data modify storage w:world center set value [0,0]
+execute unless data storage w:world setup run data modify storage w:world center set value [0d, 0d]
 execute unless data storage w:world setup run data modify storage w:world borderRadius set value 100
 execute unless data storage w:world setup run gamerule spawnRadius 60
 execute unless data storage w:world setup run gamerule showDeathMessages false

@@ -1,0 +1,6 @@
+#file: ./setup
+
+
+
+
+/give @s written_book{pages:['[["",{"text":"Merkezi belirle","underlined":true,"bold":true,"clickEvent":{"action":"run_command","value":"/function sumo:world/set_world_center"},"color":"blue"},{"text":"\\n\\n","underlined":true,"bold":true},{"text":"Market kitabı","underlined":true,"bold":true,"clickEvent":{"action":"run_command","value":"/function sumo:shop/get_book"},"color":"blue"},{"text":"\\n\\n","underlined":true,"bold":true},{"text":"Datapack\'i yeniden yükle","underlined":true,"bold":true,"clickEvent":{"action":"run_command","value":"/reload"},"color":"blue"},"\\n\\n\\n\\n\\n",{"text":"metw.cc","clickEvent":{"action":"open_url","value":"https://www.metw.cc"},"bold":true,"color":"blue","underlined":true}]]'],title:Kurulum,author:metwse,display:{Name:'[{"text":"Kurulum","italic":false,"color":"red","bold":true}]'}}

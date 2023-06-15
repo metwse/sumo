@@ -3,10 +3,12 @@
 
 
 asat (@a) {
-    if ('entity @s[y=0,dy=30]') {
-        run function kill/use_totem
-        if ('entity @s[nbt={Health:0f}]') {
-            /tellraw @a [{"selector":"@s","color":"blue","bold":true},{"text":" fazla derindeydi.","color":"blue","bold":false}]
+    if ('entity @s[y=-30,dy=60]') {
+        unless ('block ~ ~-0.1 ~ minecraft:air') {
+            run function kill/use_totem
+            if ('entity @s[nbt={Health:0f}]') {
+                /tellraw @a [{"selector":"@s","color":"blue","bold":true},{"text":" fazla derindeydi.","color":"blue","bold":false}]
+            }
         }
     }
     if ('block ~ ~0.1 ~ minecraft:water') {
@@ -14,5 +16,14 @@ asat (@a) {
         if ('entity @s[nbt={Health:0f}]') {
             /tellraw @s [{"selector":"@s","color":"blue","bold":true},{"text":" boğuldu!","color":"blue","bold":false}]
         }
+    }
+}
+
+asat (@e[type=!minecraft:player]) {
+    if ('block ~ ~0.1 ~ minecraft:water') {
+        /kill @s
+    }
+    if ('entity @s[y=-63,dy=93,type=!minecraft:item]') {
+        /kill @s
     }
 }

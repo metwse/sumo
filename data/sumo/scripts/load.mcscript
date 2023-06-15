@@ -17,7 +17,7 @@ run function shop/shop
 
 
 unless ('data storage w:world setup') {
-    /data modify storage w:world center set value [0,0]
+    /data modify storage w:world center set value [0d, 0d]
     /data modify storage w:world borderRadius set value 100
     /gamerule spawnRadius 60
     /gamerule showDeathMessages false

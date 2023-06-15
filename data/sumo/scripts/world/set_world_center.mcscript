@@ -1,0 +1,8 @@
+#file: ./set_world_center
+
+
+
+/execute store result storage w:world center[0] double 1 run data get entity @s Pos[0]
+/execute store result storage w:world center[1] double 1 run data get entity @s Pos[2]
+run function world/update_center
+run function world/update_border

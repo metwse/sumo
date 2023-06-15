@@ -11,6 +11,15 @@ function sumo:mcscript/load
 scoreboard objectives add w-firework dummy
 scoreboard objectives add w-stick dummy
 scoreboard objectives add w-world dummy
+scoreboard objectives add w-firework-owner-0 dummy
+scoreboard objectives add w-firework-owner-1 dummy
+scoreboard objectives add w-firework-owner-2 dummy
+scoreboard objectives add w-firework-owner-3 dummy
+scoreboard objectives add w-firework-uuid-0 dummy
+scoreboard objectives add w-firework-uuid-1 dummy
+scoreboard objectives add w-firework-uuid-2 dummy
+scoreboard objectives add w-firework-uuid-3 dummy
+scoreboard objectives add w-firework-success dummy
 data modify storage w:firework owner set value [0, 0, 0, 0]
 function sumo:items/items
 function sumo:shop/shop

@@ -7,7 +7,6 @@ run function bouncing_snowball
 run function kill/kill
 run function items/spread
 
-
 /effect give @a minecraft:regeneration infinite 3 true
 /effect give @a minecraft:saturation infinite 3 true
 /effect give @a minecraft:resistance infinite 3 true

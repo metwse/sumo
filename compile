@@ -1,0 +1,4 @@
+mcscript compile
+
+#mv data/sumo/functions/sumo/data/sumo/functions/mcscript data/sumo/functions/mcscript
+#rm -r data/sumo/functions/sumo

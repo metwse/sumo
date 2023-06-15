@@ -1,0 +1,14 @@
+#file: ./items
+
+
+
+/schedule clear sumo:items/firework1
+run function items/firework1
+/schedule clear sumo:items/firework2
+run function items/firework2
+/schedule clear sumo:items/snowball
+run function items/snowball
+/schedule clear sumo:items/sugar
+run function items/sugar
+/schedule clear sumo:items/ender_pearl
+run function items/ender_pearl

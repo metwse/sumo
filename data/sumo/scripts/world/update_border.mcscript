@@ -1,0 +1,7 @@
+#file: ./update_border
+
+
+
+/execute store result score border w-world run data get storage w:world borderRadius 2
+/worldborder set 1
+run function world/update_border_recursive

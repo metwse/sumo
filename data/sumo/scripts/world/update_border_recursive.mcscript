@@ -1,0 +1,9 @@
+#file: ./update_border_recursive
+
+
+
+w-world border --
+/worldborder add 1
+if (w-world border > 1) { 
+    run function world/update_border_recursive
+}

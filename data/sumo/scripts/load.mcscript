@@ -1,0 +1,39 @@
+#file: ./load
+
+
+
+var w-world
+var w-stick
+
+/scoreboard objectives add w-firework dummy
+/scoreboard objectives add w-stick dummy
+/scoreboard objectives add w-world dummy
+
+/data modify storage w:firework owner set value [0, 0, 0, 0]
+
+
+run function items/items
+run function shop/shop
+
+
+unless ('data storage w:world setup') {
+    /data modify storage w:world center set value [0,0]
+    /data modify storage w:world borderRadius set value 100
+    /gamerule spawnRadius 60
+    /gamerule showDeathMessages false
+    /gamerule commandBlockOutput false
+    /gamerule doImmediateRespawn true
+    /gamerule mobGriefing false
+    /gamerule fallDamage false
+    /data modify storage w:world setup set value 1b
+}
+
+
+/kill @e[tag=w-worldCenter]
+at (@r) {
+    /summon minecraft:snowball ~ -65 ~ {NoGravity:1b,Tags:["w-worldCenter"]}
+}
+as (@e[tag=w-worldCenter]) {
+    /execute store result entity @s Pos[0] double 1 run data get storage w:world center[0]
+    /execute store result entity @s Pos[2] double 1 run data get storage w:world center[1]
+}

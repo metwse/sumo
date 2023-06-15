@@ -1,0 +1,9 @@
+#file: ./shop
+
+
+
+/scoreboard objectives add w-currency-sugar dummy
+/scoreboard objectives add w-currency-pearl dummy
+
+var w-currency-sugar 
+var w-currency-pearl 

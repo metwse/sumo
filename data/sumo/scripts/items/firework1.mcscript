@@ -1,0 +1,10 @@
+#file: ./firework1
+
+
+
+/schedule function sumo:items/firework1 10s
+at (@e[tag=w-worldCenter]) {
+    as (@a) {
+        /summon minecraft:item ~ ~1 ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:firework_rocket",Count:1b,tag:{display:{Name:'[{"text":"Bin","italic":false,"color":"red","bold":true}]'},w-rideable:1b,Fireworks:{Flight:3},CanPlaceOn:["minecraft:sand","minecraft:gravel","minecraft:grass_block","minecraft:grass","minecraft:stone"],HideFlags:16}}}
+    }
+}

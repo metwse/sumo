@@ -1,0 +1,13 @@
+#file: ./update_center
+
+
+
+/kill @e[tag=w-worldCenter]
+/summon minecraft:snowball ~ -65 ~ {NoGravity:1b,Tags:["w-worldCenter"]}
+as (@e[tag=w-worldCenter]) {
+    /execute store result entity @s Pos[0] double 1 run data get storage w:world center[0]
+    /execute store result entity @s Pos[2] double 1 run data get storage w:world center[1]
+    at (@s) {
+        /worldborder center ~ ~
+    }
+}

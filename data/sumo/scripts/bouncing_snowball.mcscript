@@ -1,0 +1,10 @@
+#file: ./bouncing_snowball
+
+
+
+/tag @e[type=minecraft:snowball,nbt={Item:{tag:{w-bouncing:1b}}},limit=1] add w-snowball
+as (@e[tag=w-snowball,limit=1]) {
+    /execute at @s run effect give @e[distance=0..5] minecraft:levitation 1 5 true
+    /tag @s remove w-snowball
+}
+

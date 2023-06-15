@@ -1,0 +1,21 @@
+#file: ./use_totem
+
+
+
+/data get entity @s Inventory[{Slot:-106b,id:"minecraft:totem_of_undying"}]
+unless ('entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}]') {
+    /kill @s[nbt=!{Inventory:[{id:"minecraft:totem_of_undying"}]}]
+} else {
+    /tellraw @s [{"selector":"@s","color":"yellow","bold":true},{"text":" totem kulllanarak hayatta kaldı.","bold":false}]
+    /setblock ~ 255 ~ minecraft:barrel
+    /item replace block ~ 255 ~ container.0 from entity @s weapon.offhand
+    /item replace entity @s weapon.offhand with minecraft:totem_of_undying
+    /damage @s 1000000
+    /item replace entity @s weapon.offhand from block ~ 255 ~ container.0
+    /setblock ~ 255 ~ minecraft:air
+    run function kill/spread_player
+    at (@s) {
+        /playsound minecraft:item.totem.use player @s
+    }
+    /clear @s minecraft:totem_of_undying 1
+}

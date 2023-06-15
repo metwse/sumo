@@ -1,0 +1,47 @@
+#file: ./rideable_firework
+
+
+
+var w-firework
+/tag @e[type=minecraft:firework_rocket,nbt={FireworksItem:{tag:{w-rideable:1b}}},tag=!w-mounted,limit=1] add w-firework
+as (@e[limit=1,tag=w-firework]) {
+    for (0, 3) {
+        /execute store result storage w:firework owner[$(i)] int 1 run data get entity @s Owner[$(i)]
+    }
+}
+if ('entity @e[limit=1,tag=w-firework]') {
+    as (@a) {
+        w-firework success = 0
+        for (0, 3) {
+            w-firework uuid = run: data get entity @s UUID[$(i)]
+            w-firework owner = run: data get storage w:firework owner[$(i)]
+            if ('score uuid w-firework = owner w-firework') {
+                w-firework success += 1
+            }
+        }
+        if (w-firework success == 4) {
+            /ride @s mount @e[limit=1,tag=w-firework]
+            w-firework a = run: data get entity @e[limit=1,tag=w-firework] FireworksItem.tag.Fireworks.Flight
+            if ('entity @e[limit=1,tag=w-firework,nbt={FireworksItem:{tag:{w-effect:1b}}}]') {
+                switch (w-firework) {
+                    case == 1 {
+                        /effect give @s minecraft:slow_falling 2 2
+                    },
+                    case == 2 {
+                        /effect give @s minecraft:slow_falling 3 2
+                    },
+                    case == 3 {
+                        /effect give @s minecraft:slow_falling 4 2
+                    },
+                    default {
+                        /effect give @s minecraft:slow_falling 2 2
+                    }
+                }
+            }
+        }
+    }
+}
+as (@e[limit=1,tag=w-firework]) {
+    /tag @s add w-mounted
+    /tag @s remove w-firework
+}

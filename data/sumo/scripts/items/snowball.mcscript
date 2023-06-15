@@ -1,0 +1,12 @@
+#file: ./snowball
+
+
+
+/schedule function sumo:items/snowball 7s
+at (@e[tag=w-worldCenter]) {
+    as (@a) {
+        /summon minecraft:item ~ ~1 ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:snowball",Count:1b,tag:{display:{Name:'[{"text":"Zıp","italic":false,"color":"red","bold":true}]'},w-bouncing:1b}}}
+    }
+}
+
+

@@ -1,0 +1,7 @@
+#file: ./spread_player
+
+
+
+at (@e[tag=w-worldCenter]) {
+    /spreadplayers ~ ~ 1 80 false @s
+}

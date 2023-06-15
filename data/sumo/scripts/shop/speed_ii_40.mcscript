@@ -1,0 +1,10 @@
+#file: ./speed_ii_40
+
+
+
+run function shop/calculate_currency
+
+if (w-currency-sugar @s >= 12) {
+    /give @p splash_potion{CustomPotionColor:3336444,display:{Name:'[{"text":"Hız İksiri","italic":false,"bold":true,"color":"red"}]'},CustomPotionEffects:[{Id:1,Duration:800,Amplifier:1}]} 1
+    /clear @s sugar{w-shop:1b} 12
+}

@@ -1,0 +1,10 @@
+#file: ./sugar
+
+
+
+/schedule function sumo:items/sugar 3s
+at (@e[tag=w-worldCenter]) {
+    as (@a) {
+        /summon minecraft:item ~ ~1 ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:sugar",Count:1b,tag:{display:{Name:'[{"text":"Şeker","italic":false,"color":"red","bold":true}]'},w-shop:1b}}}
+    }
+}

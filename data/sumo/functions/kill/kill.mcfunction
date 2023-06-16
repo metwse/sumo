@@ -9,4 +9,4 @@ execute as @a at @s if entity @s[y=-30,dy=60] unless block ~ ~-0.1 ~ minecraft:a
 execute as @a at @s if block ~ ~0.1 ~ minecraft:water run function sumo:kill/use_totem
 execute as @a at @s if block ~ ~0.1 ~ minecraft:water if entity @s[nbt={Health:0f}] run tellraw @a [{"selector":"@s","color":"blue","bold":true},{"text":" boğuldu!","color":"blue","bold":false}]
 execute as @e[type=!minecraft:player] at @s if block ~ ~0.1 ~ minecraft:water run kill @s
-execute as @e[type=!minecraft:player] at @s if entity @s[y=-63,dy=93,type=!minecraft:item] run kill @s
+execute as @e[type=!minecraft:player] at @s if entity @s[y=-63,dy=93] run kill @s

@@ -23,7 +23,7 @@ asat (@e[type=!minecraft:player]) {
     if ('block ~ ~0.1 ~ minecraft:water') {
         /kill @s
     }
-    if ('entity @s[y=-63,dy=93,type=!minecraft:item]') {
+    if ('entity @s[y=-63,dy=93]') {
         /kill @s
     }
 }

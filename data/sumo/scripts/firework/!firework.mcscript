@@ -1,0 +1,7 @@
+#file: ./firework
+
+
+
+asat (@e[type=minecraft:firework_rocket,tag=w-mounted]) {
+    run function firework/control
+}

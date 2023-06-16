@@ -2,61 +2,15 @@
 
 
 
-var w-firework-flight
-
-var w-firework-owner-0 
-var w-firework-owner-1 
-var w-firework-owner-2 
-var w-firework-owner-3
-var w-firework-uuid-0 
-var w-firework-uuid-1 
-var w-firework-uuid-2 
-var w-firework-uuid-3
-var w-firework-success
-
-w-firework-owner-0 @a = run: data get entity @s Owner[0]
-w-firework-owner-1 @a = run: data get entity @s Owner[1]
-w-firework-owner-2 @a = run: data get entity @s Owner[2]
-w-firework-owner-3 @a = run: data get entity @s Owner[3]
-
-/data modify entity @s ShotAtAngle set value 1b
-
-as (@a) {
-    w-firework-uuid-0 @s = run: data get entity @s UUID[0]
-    w-firework-uuid-1 @s = run: data get entity @s UUID[1]
-    w-firework-uuid-2 @s = run: data get entity @s UUID[2]
-    w-firework-uuid-3 @s = run: data get entity @s UUID[3]
-
-    w-firework-success @s = 0
-    /execute if score @s w-firework-owner-0 = @s w-firework-uuid-0 run scoreboard players add @s w-firework-success 1
-    /execute if score @s w-firework-owner-1 = @s w-firework-uuid-1 run scoreboard players add @s w-firework-success 1
-    /execute if score @s w-firework-owner-2 = @s w-firework-uuid-2 run scoreboard players add @s w-firework-success 1
-    /execute if score @s w-firework-owner-3 = @s w-firework-uuid-3 run scoreboard players add @s w-firework-success 1
-
-    if (w-firework-success @s == 4) {
-        /ride @s mount @e[limit=1,tag=w-firework]
-        w-firework-id @e[limit=1,tag=w-firework] = w-firework-id
-        w-firework-id @s = w-firework-id
-        w-firework-id ++
-        w-firework-flight = run: data get entity @e[limit=1,tag=w-firework] FireworksItem.tag.Fireworks.Flight
-        if ('entity @e[limit=1,tag=w-firework,nbt={FireworksItem:{tag:{w-effect:1b}}}]') {
-            switch (w-firework-flight) {
-                case == 1 {
-                    /effect give @s minecraft:slow_falling 2 2
-                },
-                case == 2 {
-                    /effect give @s minecraft:slow_falling 3 2
-                },
-                case == 3 {
-                    /effect give @s minecraft:slow_falling 4 2
-                },
-                default {
-                    /effect give @s minecraft:slow_falling 2 2
-                }
-            }
-        }
-    }
+if (w-firework-enchanted @s == 1) {
+    /summon firework_rocket ~ ~0.25 ~ {LifeTime:30,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3}},tag:{Enchantments:[{}]}},Tags:["w-firework"],ShotAtAngle:1b}
+} else {
+    /summon firework_rocket ~ ~0.25 ~ {LifeTime:30,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:3}}},Tags:["w-firework"],ShotAtAngle:1b}
 }
-
-/tag @s add w-mounted
-/tag @s remove w-firework
+w-firework-id @s = w-firework-id
+w-firework-id @e[tag=w-firework] = w-firework-id
+w-firework-id ++
+/ride @s dismount
+/ride @s mount @e[limit=1,tag=w-firework]
+/tag @e[tag=w-firework] add w-mounted
+/tag @e[tag=w-firework] remove w-firework

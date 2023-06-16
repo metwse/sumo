@@ -1,0 +1,9 @@
+ #file: ./used_ender_eye
+
+
+
+
+/advancement revoke @s only sumo:used_ender_eye
+if ('entity @e[type=minecraft:eye_of_ender,nbt={Item:{tag:{w-firework:1b}}}]') {
+    run function firework/summon
+}

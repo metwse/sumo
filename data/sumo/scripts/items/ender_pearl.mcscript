@@ -2,7 +2,7 @@
 
 
 
-/schedule function sumo:items/ender_pearl 12s
+/schedule function sumo:items/ender_pearl 15s
 at (@e[tag=w-worldCenter]) {
     as (@a) {
         /summon minecraft:item ~ ~1 ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:ender_pearl",Count:1b,tag:{display:{Name:'[{"text":"Ender İncisi","italic":false,"color":"red","bold":true}]'},w-shop:1b}}}

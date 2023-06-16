@@ -15,7 +15,7 @@ unless ('entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}]') {
     /setblock ~ 255 ~ minecraft:air
     run function kill/spread_player
     at (@s) {
-        /playsound minecraft:item.totem.use player @s
+        /playsound minecraft:item.totem.use player @a ~ ~ ~
     }
     /clear @s minecraft:totem_of_undying 1
 }

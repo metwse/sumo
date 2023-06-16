@@ -6,9 +6,10 @@ run function bouncing_snowball
 run function kill/kill
 run function items/spread
 run function firework/firework
+run function fire_charge/fire_charge
 
-/effect give @a minecraft:regeneration infinite 3 true
-/effect give @a minecraft:saturation infinite 3 true
+/effect give @a minecraft:regeneration infinite 255 true
+/effect give @a minecraft:saturation infinite 255 true
 /effect give @a minecraft:resistance infinite 3 true
 
 
@@ -29,7 +30,6 @@ as (@a) {
         /clear @s minecraft:arrow{w-stick:1b}
     }
     unless (w-is-new-player @s == 0) {
-        w-ender-eye @s = 1
         w-is-new-player @s = 0
     }
 }
@@ -60,4 +60,7 @@ as (@e[type=minecraft:zombie,tag=!w-zombie]) {
 as (@e[type=minecraft:skeleton,tag=!w-skeleton]) {
     /item replace entity @s weapon.mainhand with minecraft:bow{Enchantments:[{id:punch,lvl:3}]}
     /tag @s add w-skeleton
+}
+as (@e[type=minecraft:creeper,nbt=!{powered:1b}]) {
+    /data modify entity @s powered set value 1b
 }

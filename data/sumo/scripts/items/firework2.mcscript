@@ -2,10 +2,10 @@
 
 
 
-/schedule function sumo:items/firework2 30s
+/schedule function sumo:items/firework2 30s replace
 at (@e[tag=w-worldCenter]) {
     as (@a) {
-        /summon minecraft:item ~ ~1 ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:ender_eye",Count:1b,tag:{CustomModelData:1,display:{Name:'[{"text":"Bin","italic":false,"color":"red","bold":true}]'},w-enchanted:1b,Enchantments:[{}],w-rideable:1b,w-firework:1b}}}
+        /summon minecraft:item ~ ~ ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:ender_eye",Count:1b,tag:{CustomModelData:1,display:{Name:'[{"text":"Bin","italic":false,"color":"red","bold":true}]'},w-enchanted:1b,Enchantments:[{}],w-firework:1b}}}
     }
 }
 

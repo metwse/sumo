@@ -1,0 +1,10 @@
+#file: ./fire_charge
+
+
+
+as (@e[type=minecraft:fireball]) {
+    /scoreboard players remove @s w-fire-charge 1
+    if (w-fire-charge @s < 0) {
+        /kill @s
+    }
+}

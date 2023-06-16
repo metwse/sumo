@@ -2,10 +2,10 @@
 
 
 
-/schedule function sumo:items/snowball 10s
+/schedule function sumo:items/snowball 10s replace
 at (@e[tag=w-worldCenter]) {
     as (@a) {
-        /summon minecraft:item ~ ~1 ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:snowball",Count:1b,tag:{display:{Name:'[{"text":"Zıp","italic":false,"color":"red","bold":true}]'},w-bouncing:1b}}}
+        /summon minecraft:item ~ ~ ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:snowball",Count:1b,tag:{display:{Name:'[{"text":"Zıp","italic":false,"color":"red","bold":true}]'},w-bouncing:1b}}}
     }
 }
 

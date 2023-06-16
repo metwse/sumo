@@ -14,5 +14,5 @@ execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run da
 execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run item replace entity @s weapon.offhand from block ~ 255 ~ container.0
 execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run setblock ~ 255 ~ minecraft:air
 execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run function sumo:kill/spread_player
-execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] at @s run playsound minecraft:item.totem.use player @s
+execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] at @s run playsound minecraft:item.totem.use player @a ~ ~ ~
 execute if entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}] run clear @s minecraft:totem_of_undying 1

@@ -2,10 +2,5 @@
 
 
 
-/tag @e[type=minecraft:eye_of_ender,nbt={Item:{tag:{w-firework:1b}}}] add w-ender-eye
-if (w-ender-eye @s > 0) {
-    w-firework-enchanted @s = run: data get entity @e[limit=1,tag=w-ender-eye] Item.tag.w-enchanted
-    run function firework/mount
-    w-ender-eye @s = 0
-}
-/kill @e[tag=w-ender-eye]
+w-firework-enchanted @s = run: data get entity @e[limit=1,tag=w-ender-eye] Item.tag.w-enchanted
+run function firework/mount

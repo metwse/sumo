@@ -1,0 +1,10 @@
+#file: ./fire_charge
+
+
+
+/schedule function sumo:items/fire_charge 10s replace
+at (@e[tag=w-worldCenter]) {
+    as (@a) {
+        /summon minecraft:item ~ ~ ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:ender_eye",Count:1b,tag:{CustomModelData:2,display:{Name:'[{"text":"Bum","italic":false,"color":"red","bold":true}]'},w-fire-charge:1b}}}
+    }
+}

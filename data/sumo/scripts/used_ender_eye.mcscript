@@ -2,8 +2,16 @@
 
 
 
-
 /advancement revoke @s only sumo:used_ender_eye
-if ('entity @e[type=minecraft:eye_of_ender,nbt={Item:{tag:{w-firework:1b}}}]') {
+/tag @e[type=minecraft:eye_of_ender,distance=0..1] add w-ender-eye
+
+
+if ('entity @e[tag=w-ender-eye,nbt={Item:{tag:{w-firework:1b}}}]') {
     run function firework/summon
 }
+
+if ('entity @e[tag=w-ender-eye,nbt={Item:{tag:{w-fire-charge:1b}}}]') {
+    run function fire_charge/summon
+}
+
+/kill @e[tag=w-ender-eye]

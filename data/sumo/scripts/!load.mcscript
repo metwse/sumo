@@ -2,24 +2,22 @@
 
 
 
-var w-world
-var w-ender-eye
-var w-is-new-player
-
 var w-stick
+/scoreboard objectives add w-stick dummy
+var w-is-new-player
+/scoreboard objectives add w-is-new-player dummy
+
+var w-world
+/scoreboard objectives add w-world dummy
+
+var w-fire-charge
+/scoreboard objectives add w-fire-charge dummy
 
 var w-firework
 var w-firework-enchanted
 var w-firework-id
 var w-firework-flight
 var w-firework-id-test
-
-/scoreboard objectives add w-stick dummy
-/scoreboard objectives add w-world dummy
-/scoreboard objectives add w-is-new-player dummy
-
-/scoreboard objectives add w-ender-eye minecraft.used:minecraft.ender_eye
-
 /scoreboard objectives add w-firework dummy
 /scoreboard objectives add w-firework-flight dummy
 /scoreboard objectives add w-firework-id dummy

@@ -3,9 +3,10 @@
 
 
 var w-world
-var w-stick
 var w-ender-eye
+var w-is-new-player
 
+var w-stick
 
 var w-firework
 var w-firework-enchanted
@@ -15,6 +16,8 @@ var w-firework-id-test
 
 /scoreboard objectives add w-stick dummy
 /scoreboard objectives add w-world dummy
+/scoreboard objectives add w-is-new-player dummy
+
 /scoreboard objectives add w-ender-eye minecraft.used:minecraft.ender_eye
 
 /scoreboard objectives add w-firework dummy

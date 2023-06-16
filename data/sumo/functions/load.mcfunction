@@ -12,8 +12,10 @@
 
 
 
+
 scoreboard objectives add w-stick dummy
 scoreboard objectives add w-world dummy
+scoreboard objectives add w-is-new-player dummy
 scoreboard objectives add w-ender-eye minecraft.used:minecraft.ender_eye
 scoreboard objectives add w-firework dummy
 scoreboard objectives add w-firework-flight dummy

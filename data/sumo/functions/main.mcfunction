@@ -12,21 +12,23 @@ effect give @a minecraft:regeneration infinite 3 true
 effect give @a minecraft:saturation infinite 3 true
 effect give @a minecraft:resistance infinite 3 true
 item replace entity @a container.0 with minecraft:stick{display:{Name:'[{"text":"Fetiş Çubuğu","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:knockback,lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Amount:100,Slot:mainhand,Operation:2,Name:"generic.attack_speed",UUID:[I;-121726,6411,153256,-12822]}],HideFlags:39,w-stick:1b}
+item replace entity @a container.1 with minecraft:bow{Unbreakable:1,display:{Name:'[{"text":"Fetiş Yayı","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:punch,lvl:3}],HideFlags:37,w-stick:1b}
+item replace entity @a container.35 with minecraft:arrow{display:{Name:'[{"text":"Ok","italic":false,"color":"red","bold":true}]'},w-stick:1b}
 execute as @a store result score @s w-stick run clear @s minecraft:stick{w-stick:1b} 0
 execute as @a if score @s w-stick matches 2.. run clear @s minecraft:stick{w-stick:1b}
-item replace entity @a container.1 with minecraft:bow{Unbreakable:1,display:{Name:'[{"text":"Fetiş Yayı","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:punch,lvl:3}],HideFlags:37,w-stick:1b}
 execute as @a store result score @s w-stick run clear @s minecraft:bow{w-stick:1b} 0
 execute as @a if score @s w-stick matches 2.. run clear @s minecraft:bow{w-stick:1b}
-item replace entity @a container.35 with minecraft:arrow{display:{Name:'[{"text":"Ok","italic":false,"color":"red","bold":true}]'},w-stick:1b}
 execute as @a store result score @s w-stick run clear @s minecraft:arrow{w-stick:1b} 0
 execute as @a if score @s w-stick matches 2.. run clear @s minecraft:arrow{w-stick:1b}
+execute as @a unless score @s w-is-new-player matches 0 run scoreboard players set @s w-ender-eye 1
+execute as @a unless score @s w-is-new-player matches 0 run scoreboard players set @s w-is-new-player 0
 execute as @e[nbt={Tame:0b}] run item replace entity @s horse.saddle with minecraft:saddle
 execute as @e[nbt={Tame:0b}] run data modify entity @s Tame set value 1b
-execute as @e[type=minecraft:arrow,nbt=!{pickup:0b}] run data modify entity @s pickup set value 0b
 execute as @e[type=minecraft:pig,nbt={Saddle:0b}] run data modify entity @s Saddle set value 1b
+execute as @e[type=minecraft:arrow,nbt=!{pickup:0b}] run data modify entity @s pickup set value 0b
+execute as @e[type=item,tag=!w-age,nbt=!{Age:5999s}] run data merge entity @s {Age:5940s}
+execute as @e[type=item,tag=!w-age,nbt=!{Age:5999s}] run tag @s add w-age
 execute as @e[type=minecraft:zombie,tag=!w-zombie] run item replace entity @s weapon.mainhand with minecraft:stick{Enchantments:[{id:knockback,lvl:3}]}
 execute as @e[type=minecraft:zombie,tag=!w-zombie] run tag @s add w-zombie
 execute as @e[type=minecraft:skeleton,tag=!w-skeleton] run item replace entity @s weapon.mainhand with minecraft:bow{Enchantments:[{id:punch,lvl:3}]}
 execute as @e[type=minecraft:skeleton,tag=!w-skeleton] run tag @s add w-skeleton
-execute as @e[type=item,tag=!w-age,nbt=!{Age:5999s}] run data merge entity @s {Age:5940s}
-execute as @e[type=item,tag=!w-age,nbt=!{Age:5999s}] run tag @s add w-age

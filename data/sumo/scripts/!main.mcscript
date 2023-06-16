@@ -13,24 +13,24 @@ run function firework/firework
 
 
 /item replace entity @a container.0 with minecraft:stick{display:{Name:'[{"text":"Fetiş Çubuğu","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:knockback,lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Amount:100,Slot:mainhand,Operation:2,Name:"generic.attack_speed",UUID:[I`-121726,6411,153256,-12822]}],HideFlags:39,w-stick:1b}
+/item replace entity @a container.1 with minecraft:bow{Unbreakable:1,display:{Name:'[{"text":"Fetiş Yayı","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:punch,lvl:3}],HideFlags:37,w-stick:1b}
+/item replace entity @a container.35 with minecraft:arrow{display:{Name:'[{"text":"Ok","italic":false,"color":"red","bold":true}]'},w-stick:1b}
 as (@a) {
     /execute store result score @s w-stick run clear @s minecraft:stick{w-stick:1b} 0
     if (w-stick @s > 1) {
         /clear @s minecraft:stick{w-stick:1b}
     }
-}
-/item replace entity @a container.1 with minecraft:bow{Unbreakable:1,display:{Name:'[{"text":"Fetiş Yayı","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:punch,lvl:3}],HideFlags:37,w-stick:1b}
-as (@a) {
     /execute store result score @s w-stick run clear @s minecraft:bow{w-stick:1b} 0
     if (w-stick @s > 1) {
         /clear @s minecraft:bow{w-stick:1b}
     }
-}
-/item replace entity @a container.35 with minecraft:arrow{display:{Name:'[{"text":"Ok","italic":false,"color":"red","bold":true}]'},w-stick:1b}
-as (@a) {
     /execute store result score @s w-stick run clear @s minecraft:arrow{w-stick:1b} 0
     if (w-stick @s > 1) {
         /clear @s minecraft:arrow{w-stick:1b}
+    }
+    unless (w-is-new-player @s == 0) {
+        w-ender-eye @s = 1
+        w-is-new-player @s = 0
     }
 }
 
@@ -39,15 +39,17 @@ as (@e[nbt={Tame:0b}]) {
     /item replace entity @s horse.saddle with minecraft:saddle
     /data modify entity @s Tame set value 1b
 }
+as (@e[type=minecraft:pig,nbt={Saddle:0b}]) {
+    /data modify entity @s Saddle set value 1b
+}
 
 
 as (@e[type=minecraft:arrow,nbt=!{pickup:0b}]) {
     /data modify entity @s pickup set value 0b
 }
-
-
-as (@e[type=minecraft:pig,nbt={Saddle:0b}]) {
-    /data modify entity @s Saddle set value 1b
+as (@e[type=item,tag=!w-age,nbt=!{Age:5999s}]) {
+    /data merge entity @s {Age:5940s}
+    /tag @s add w-age
 }
 
 
@@ -55,15 +57,7 @@ as (@e[type=minecraft:zombie,tag=!w-zombie]) {
     /item replace entity @s weapon.mainhand with minecraft:stick{Enchantments:[{id:knockback,lvl:3}]}
     /tag @s add w-zombie
 }
-
-
 as (@e[type=minecraft:skeleton,tag=!w-skeleton]) {
     /item replace entity @s weapon.mainhand with minecraft:bow{Enchantments:[{id:punch,lvl:3}]}
     /tag @s add w-skeleton
-}
-
-
-as (@e[type=item,tag=!w-age,nbt=!{Age:5999s}]) {
-    /data merge entity @s {Age:5940s}
-    /tag @s add w-age
 }

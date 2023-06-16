@@ -2,7 +2,7 @@
 
 
 
-run function rideable_firework
+run function firework/firework
 run function bouncing_snowball
 run function kill/kill
 run function items/spread

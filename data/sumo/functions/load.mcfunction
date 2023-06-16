@@ -8,7 +8,6 @@ function sumo:mcscript/load
 
 
 
-scoreboard objectives add w-firework dummy
 scoreboard objectives add w-stick dummy
 scoreboard objectives add w-world dummy
 scoreboard objectives add w-firework-owner-0 dummy
@@ -20,7 +19,12 @@ scoreboard objectives add w-firework-uuid-1 dummy
 scoreboard objectives add w-firework-uuid-2 dummy
 scoreboard objectives add w-firework-uuid-3 dummy
 scoreboard objectives add w-firework-success dummy
-data modify storage w:firework owner set value [0, 0, 0, 0]
+scoreboard objectives add w-firework dummy
+scoreboard objectives add w-firework-flight dummy
+scoreboard objectives add w-firework-id dummy
+scoreboard objectives add w-firework-id-test dummy
+scoreboard objectives add w-firework-order dummy
+scoreboard players set w-firework-id w-firework-id 0
 function sumo:items/items
 function sumo:shop/shop
 execute unless data storage w:world setup run data modify storage w:world center set value [0d, 0d]

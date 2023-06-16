@@ -1,0 +1,37 @@
+#file: ./control
+
+
+
+var w-firework
+var w-firework-id
+var w-firework-id-test
+var w-firework-order
+
+w-firework-id-test @a = w-firework-id @s
+/tag @s add w-firework
+asat (@a) {
+    if ('score @s w-firework-id = @s w-firework-id-test') {
+        /tag @s add w-firework-owner
+        /execute as @e[tag=w-firework] at @s store result entity @s Rotation[0] int 1 run data get entity @a[tag=w-firework-owner,limit=1] Rotation[0] 1
+        /execute as @e[tag=w-firework] at @s store result entity @s Rotation[1] int 1 run data get entity @a[tag=w-firework-owner,limit=1] Rotation[1] 1
+        /summon minecraft:snowball ^ ^ ^2 {Tags:["w-firework-entity"]}
+        w-firework x1 = run: data get entity @s Pos[0] 1000
+        w-firework y1 = run: data get entity @s Pos[1] 1000
+        w-firework z1 = run: data get entity @s Pos[2] 1000
+        as (@e[tag=w-firework-entity]) {
+            w-firework x2 = run: data get entity @s Pos[0] 1000
+            w-firework y2 = run: data get entity @s Pos[1] 1000
+            w-firework z2 = run: data get entity @s Pos[2] 1000
+            /kill @s
+        }
+        w-firework x2 -= w-firework x1
+        w-firework y2 -= w-firework y1
+        w-firework z2 -= w-firework z1
+        /execute store result entity @e[tag=w-firework,limit=1] Motion[0] double 0.0005 run scoreboard players get x2 w-firework 
+        /execute store result entity @e[tag=w-firework,limit=1] Motion[1] double 0.0005 run scoreboard players get y2 w-firework 
+        /execute store result entity @e[tag=w-firework,limit=1] Motion[2] double 0.0005 run scoreboard players get z2 w-firework 
+        /tag @s remove w-firework-owner
+    }
+}
+
+/tag @s remove w-firework

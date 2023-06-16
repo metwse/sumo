@@ -11,4 +11,4 @@ execute as @e[tag=w-worldCenter] store result entity @s Pos[0] double 1 run data
 execute as @e[tag=w-worldCenter] store result entity @s Pos[2] double 1 run data get storage w:world center[1]
 execute as @e[tag=w-worldCenter] at @s run worldborder center ~ ~
 execute as @e[tag=w-worldCenter] at @s run forceload add ~ ~
-execute as @e[tag=w-worldCenter] at @s run setworldspawn ~ ~ ~
+execute as @e[tag=w-worldCenter] at @s run setworldspawn ~ 255 ~

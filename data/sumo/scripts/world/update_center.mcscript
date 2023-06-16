@@ -11,6 +11,6 @@ as (@e[tag=w-worldCenter]) {
     at (@s) {
         /worldborder center ~ ~
         /forceload add ~ ~
-        /setworldspawn ~ ~ ~
+        /setworldspawn ~ 255 ~
     }
 }

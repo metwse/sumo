@@ -7,9 +7,9 @@
 scoreboard players operation @a w-firework-id-test = @s w-firework-id
 tag @s add w-firework
 execute as @a at @s if score @s w-firework-id = @s w-firework-id-test run tag @s add w-firework-owner
-execute as @a at @s if score @s w-firework-id = @s w-firework-id-test if score @s w-firework-enchanted matches 1 run summon minecraft:snowball ^ ^ ^4 {Tags:["w-firework-entity"]}
+execute as @a at @s if score @s w-firework-id = @s w-firework-id-test if score @s w-firework-enchanted matches 1 run summon minecraft:snowball ^ ^ ^2 {Tags:["w-firework-entity"]}
 execute as @a at @s if score @s w-firework-id = @s w-firework-id-test if score @s w-firework-enchanted matches 1 at @e[tag=w-firework] run particle minecraft:totem_of_undying ~ ~ ~ .5 .5 .5 .5 10
-execute as @a at @s if score @s w-firework-id = @s w-firework-id-test unless score @s w-firework-enchanted matches 1 run summon minecraft:snowball ^ ^ ^2 {Tags:["w-firework-entity"]}
+execute as @a at @s if score @s w-firework-id = @s w-firework-id-test unless score @s w-firework-enchanted matches 1 run summon minecraft:snowball ^ ^ ^1 {Tags:["w-firework-entity"]}
 execute as @a at @s if score @s w-firework-id = @s w-firework-id-test store result score x1 w-firework run data get entity @s Pos[0] 1000
 execute as @a at @s if score @s w-firework-id = @s w-firework-id-test store result score y1 w-firework run data get entity @s Pos[1] 1000
 execute as @a at @s if score @s w-firework-id = @s w-firework-id-test store result score z1 w-firework run data get entity @s Pos[2] 1000

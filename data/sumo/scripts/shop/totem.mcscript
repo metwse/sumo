@@ -4,7 +4,10 @@
 
 run function shop/calculate_currency
 
-if (w-currency-pearl @s >= 3) {
-    /give @s totem_of_undying{display:{Name:'[{"text":"Ölümsüzlük Totemi","italic":false,"color":"red","bold":true}]'}} 1
-    /clear @s ender_pearl{w-shop:1b} 3
+if (w-currency-pearl @s >= 5) {
+    w-totem-count @s = run: clear @s minecraft:dirt{w-totem:1b} 0
+    if (w-totem-count @s < 4) {
+        /give @s dirt{display:{Name:'[{"text":"Totem","italic":false,"color":"red","bold":true}]'},CustomModelData:1,w-totem:1b} 1
+        /clear @s ender_pearl{w-shop:1b} 5
+    }
 }

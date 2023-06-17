@@ -2,9 +2,8 @@
 
 
 
-/data get entity @s Inventory[{Slot:-106b,id:"minecraft:totem_of_undying"}]
-unless ('entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}]') {
-    /kill @s[nbt=!{Inventory:[{id:"minecraft:totem_of_undying"}]}]
+unless ('entity @s[nbt={Inventory:[{id:"minecraft:dirt",tag:{w-totem:1b}}]}]') {
+    /kill @s[nbt={Inventory:[{id:"minecraft:dirt",tag:{w-totem:1b}}]}]
 } else {
     /tellraw @a [{"selector":"@s","color":"yellow","bold":true},{"text":" totem kulllanarak hayatta kaldı.","bold":false}]
     /setblock ~ 255 ~ minecraft:barrel
@@ -17,5 +16,5 @@ unless ('entity @s[nbt={Inventory:[{id:"minecraft:totem_of_undying"}]}]') {
     at (@s) {
         /playsound minecraft:item.totem.use player @a ~ ~ ~
     }
-    /clear @s minecraft:totem_of_undying 1
+    /clear @s minecraft:dirt{w-totem:1b} 1
 }

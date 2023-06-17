@@ -1,0 +1,6 @@
+#file: ./entity_hurt_player
+
+
+
+/advancement revoke @s only sumo:entity_hurt_player
+/ride @s dismount

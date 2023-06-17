@@ -5,6 +5,6 @@
 /schedule function sumo:items/ender_pearl 15s replace
 at (@e[tag=w-worldCenter]) {
     as (@a) {
-        /summon minecraft:item ~ ~ ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:ender_pearl",Count:1b,tag:{display:{Name:'[{"text":"Ender İncisi","italic":false,"color":"red","bold":true}]'},w-shop:1b}}}
+        /summon minecraft:item ~ ~ ~ {Tags:["w-age","w-spread"],Item:{id:"minecraft:ender_pearl",Count:1b,tag:{display:{Name:'[{"text":"Göz","italic":false,"color":"red","bold":true}]'},w-shop:1b}}}
     }
 }

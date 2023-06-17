@@ -8,12 +8,12 @@ asat (@a) {
     if ('score @s w-firework-id = @s w-firework-id-test') {
         /tag @s add w-firework-owner
         if (w-firework-enchanted @s == 1) {
-            /summon minecraft:snowball ^ ^ ^4 {Tags:["w-firework-entity"]}
+            /summon minecraft:snowball ^ ^ ^2 {Tags:["w-firework-entity"]}
             at (@e[tag=w-firework]) {
                 /particle minecraft:totem_of_undying ~ ~ ~ .5 .5 .5 .5 10
             }
         } else {
-            /summon minecraft:snowball ^ ^ ^2 {Tags:["w-firework-entity"]}
+            /summon minecraft:snowball ^ ^ ^1 {Tags:["w-firework-entity"]}
         }
         w-firework x1 = run: data get entity @s Pos[0] 1000
         w-firework y1 = run: data get entity @s Pos[1] 1000

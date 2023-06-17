@@ -12,21 +12,7 @@ function sumo:fire_charge/fire_charge
 effect give @a minecraft:regeneration infinite 255 true
 effect give @a minecraft:saturation infinite 255 true
 effect give @a minecraft:resistance infinite 3 true
-execute as @a store result score @s w-count run clear @s minecraft:stick{w-default-item:1b} 0
-execute as @a if score @s w-count matches 2.. run clear @s minecraft:stick{w-default-item:1b} 1
-execute as @a if score @s w-count matches 0 run item replace entity @a container.0 with minecraft:stick{display:{Name:'[{"text":"Fetiş Çubuğu","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:knockback,lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Amount:100,Slot:mainhand,Operation:2,Name:"generic.attack_speed",UUID:[I;-121726,6411,153256,-12822]}],HideFlags:39,w-default-item:1b}
-execute as @a store result score @s w-count run clear @s minecraft:bow{w-default-item:1b} 0
-execute as @a if score @s w-count matches 2.. run clear @s minecraft:bow{w-default-item:1b} 1
-execute as @a if score @s w-count matches 0 run item replace entity @a container.1 with minecraft:bow{Unbreakable:1,display:{Name:'[{"text":"Fetiş Yayı","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:punch,lvl:3}],HideFlags:37,w-default-item:1b}
-execute as @a store result score @s w-count run clear @s minecraft:arrow{w-default-item:1b} 0
-execute as @a if score @s w-count matches 2.. run clear @s minecraft:arrow{w-default-item:1b} 1
-execute as @a if score @s w-count matches 0 run item replace entity @a container.35 with minecraft:arrow{display:{Name:'[{"text":"Ok","italic":false,"color":"red","bold":true}]'},w-default-item:1b}
-execute as @a store result score @s w-count run clear @s minecraft:ender_pearl 0
-execute as @a if score @s w-count matches 16.. run clear @s minecraft:ender_pearl 1
-execute as @a store result score @s w-count run clear @s minecraft:ender_eye{w-firework:1b,w-enchanted:0b} 0
-execute as @a if score @s w-count matches 7.. run clear @s minecraft:ender_eye{w-firework:1b,w-enchanted:0b} 1
-execute as @a store result score @s w-count run clear @s minecraft:ender_eye{w-firework:1b,w-enchanted:1b} 0
-execute as @a if score @s w-count matches 5.. run clear @s minecraft:ender_eye{w-firework:1b,w-enchanted:1b} 1
+execute as @a run function sumo:give_items
 kill @e[type=minecraft:item,nbt={Item:{tag:{w-default-item:1b}}}]
 execute as @e[nbt={Tame:0b}] run item replace entity @s horse.saddle with minecraft:saddle
 execute as @e[nbt={Tame:0b}] run data modify entity @s Tame set value 1b

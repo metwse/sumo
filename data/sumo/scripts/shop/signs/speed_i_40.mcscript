@@ -1,0 +1,5 @@
+#file: ./speed_i_40
+
+
+
+/give @s dark_oak_sign{display:{Name:'{"text":"Hız I 40s","italic":false}'},BlockEntityTag:{front_text:{messages:['{"text":"I 40s","color":"dark_aqua"}','{"text":"Hız İksiri","color":"aqua","bold":true,"clickEvent":{"action":"run_command","value":"/function sumo:shop/buy/speed_i_40"}}','{"text":"6 Şeker","color":"dark_aqua","italic":true}','{"text":""}']}}} 1

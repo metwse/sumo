@@ -1,0 +1,13 @@
+#file: ./set_world_spawn
+
+
+
+asat (@e[tag=w-world-spawn]) {
+    if ('block ~ ~ ~ air') {
+        /tp ~ ~-1 ~
+        run function world/set_world_spawn 
+    } else {
+        /setworldspawn ~ ~1 ~
+        /kill @s
+    }
+}

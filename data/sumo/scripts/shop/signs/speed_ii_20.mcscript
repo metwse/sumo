@@ -1,0 +1,5 @@
+#file: ./speed_ii_20
+
+
+
+/give @s dark_oak_sign{display:{Name:'{"text":"Hız II 20s","italic":false}'},BlockEntityTag:{front_text:{messages:['{"text":"II 20s","color":"dark_aqua"}','{"text":"Hız İksiri","color":"aqua","bold":true,"clickEvent":{"action":"run_command","value":"/function sumo:shop/buy/speed_ii_20"}}','{"text":"4 Şeker","color":"dark_aqua","italic":true}','{"text":""}']}}} 1

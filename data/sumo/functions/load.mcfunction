@@ -7,6 +7,8 @@
 
 scoreboard objectives add w-count dummy
 
+scoreboard objectives add w-player-count dummy
+
 scoreboard objectives add w-world dummy
 
 scoreboard objectives add w-fire-charge dummy

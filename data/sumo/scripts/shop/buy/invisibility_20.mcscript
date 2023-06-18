@@ -1,0 +1,10 @@
+#file: ./invisibility_20
+
+
+
+run function shop/calculate_currency
+
+if (w-currency-sugar @s >= 16) {
+    /give @s splash_potion{CustomPotionColor:12369084,display:{Name:'[{"text":"Görünmezlik İksiri","italic":false,"bold":true,"color":"red"}]'},CustomPotionEffects:[{Id:14,Duration:400}]} 1
+    /clear @s sugar{w-shop:1b} 16
+}

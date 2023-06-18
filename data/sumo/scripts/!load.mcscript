@@ -5,6 +5,9 @@
 var w-count
 /scoreboard objectives add w-count dummy
 
+var w-player-count
+/scoreboard objectives add w-player-count dummy
+
 var w-world
 /scoreboard objectives add w-world dummy
 

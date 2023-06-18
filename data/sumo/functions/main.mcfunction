@@ -15,6 +15,9 @@ effect give @a minecraft:resistance infinite 3 true
 execute as @a if score @s w-health matches ..9 run effect give @s minecraft:resistance 1 255 true
 execute as @a run function sumo:give_items
 kill @e[type=minecraft:item,nbt={Item:{tag:{w-default-item:1b}}}]
+execute store result score w-player-count w-player-count run list
+execute if score w-player-count w-player-count matches 1 as @e[type=item] run data modify entity @s PickupDelay set value 201s
+execute unless score w-player-count w-player-count matches 1 as @e[type=item,nbt={PickupDelay:200s}] run data modify entity @s PickupDelay set value 0s
 execute as @e[nbt={Tame:0b}] run item replace entity @s horse.saddle with minecraft:saddle
 execute as @e[nbt={Tame:0b}] run data modify entity @s Tame set value 1b
 execute as @e[type=minecraft:pig,nbt={Saddle:0b}] run data modify entity @s Saddle set value 1b

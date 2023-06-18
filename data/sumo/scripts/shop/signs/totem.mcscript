@@ -1,0 +1,5 @@
+#file: ./totem
+
+
+
+/give @s dark_oak_sign{display:{Name:'{"text":"Totem","italic":false}'},BlockEntityTag:{front_text:{messages:['{"text":""}','{"text":"Totem","color":"aqua","bold":true,"clickEvent":{"action":"run_command","value":"/function sumo:shop/buy/totem"}}','{"text":"5 Göz","color":"dark_aqua","italic":true}','{"text":""}']}}} 1

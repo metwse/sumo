@@ -22,7 +22,12 @@ as (@a) {
 /kill @e[type=minecraft:item,nbt={Item:{tag:{w-default-item:1b}}}]
     
 
-
+w-player-count = run: list
+if (w-player-count == 1) {
+    /execute as @e[type=item] run data modify entity @s PickupDelay set value 201s
+} else {
+    /execute as @e[type=item,nbt={PickupDelay:200s}] run data modify entity @s PickupDelay set value 0s
+}
 
 
 as (@e[nbt={Tame:0b}]) {

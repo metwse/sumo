@@ -11,6 +11,7 @@ as (@e[tag=w-worldCenter]) {
     at (@s) {
         /worldborder center ~ ~
         /forceload add ~ ~
-        /setworldspawn ~ 255 ~
+        /summon minecraft:snowball ~ 255 ~ {NoGravity:1b,Tags:["w-world-spawn"]}
+        run function world/set_world_spawn
     }
 }

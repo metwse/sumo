@@ -7,12 +7,12 @@
 execute store result score @s w-count run clear @s minecraft:stick{w-default-item:1b} 0
 execute if score @s w-count matches 2.. run clear @s minecraft:stick{w-default-item:1b} 1
 
-execute if score @s w-count matches 0 run item replace entity @a container.0 with minecraft:stick{display:{Name:'[{"text":"Fetiş Çubuğu","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:knockback,lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Amount:100,Slot:mainhand,Operation:2,Name:"generic.attack_speed",UUID:[I;-121726,6411,153256,-12822]}],HideFlags:39,w-default-item:1b}
+execute if score @s w-count matches 0 run item replace entity @a container.0 with minecraft:stick{display:{Name:'[{"text":"Fantezi Çubuğu","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:knockback,lvl:4}],AttributeModifiers:[{AttributeName:"generic.attack_speed",Amount:100,Slot:mainhand,Operation:2,Name:"generic.attack_speed",UUID:[I;-121726,6411,153256,-12822]}],HideFlags:39,w-default-item:1b}
 
 execute store result score @s w-count run clear @s minecraft:bow{w-default-item:1b} 0
 execute if score @s w-count matches 2.. run clear @s minecraft:bow{w-default-item:1b} 1
 
-execute if score @s w-count matches 0 run item replace entity @a container.1 with minecraft:bow{Unbreakable:1,display:{Name:'[{"text":"Fetiş Yayı","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:punch,lvl:3}],HideFlags:37,w-default-item:1b}
+execute if score @s w-count matches 0 run item replace entity @a container.1 with minecraft:bow{Unbreakable:1,display:{Name:'[{"text":"Fantezi Yayı","italic":false,"color":"red","bold":true}]'},Enchantments:[{id:punch,lvl:3}],HideFlags:37,w-default-item:1b}
 
 execute store result score @s w-count run clear @s minecraft:arrow{w-default-item:1b} 0
 execute if score @s w-count matches 2.. run clear @s minecraft:arrow{w-default-item:1b} 1

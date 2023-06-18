@@ -21,6 +21,8 @@ scoreboard objectives add w-firework-id dummy
 scoreboard objectives add w-firework-id-test dummy
 scoreboard objectives add w-firework-enchanted dummy
 
+scoreboard objectives add w-health health "Can"
+
 scoreboard objectives add w-totem-count dummy
 scoreboard players set w-firework-id w-firework-id 0
 function sumo:items/items

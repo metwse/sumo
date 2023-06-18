@@ -14,6 +14,9 @@ run function fire_charge/fire_charge
 
 
 as (@a) {
+    if (w-health @s < 10) {
+        /effect give @s minecraft:resistance 1 255 true
+    }
     run function give_items
 }
 /kill @e[type=minecraft:item,nbt={Item:{tag:{w-default-item:1b}}}]

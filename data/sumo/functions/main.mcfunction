@@ -12,6 +12,7 @@ function sumo:fire_charge/fire_charge
 effect give @a minecraft:regeneration infinite 255 true
 effect give @a minecraft:saturation infinite 255 true
 effect give @a minecraft:resistance infinite 3 true
+execute as @a if score @s w-health matches ..9 run effect give @s minecraft:resistance 1 255 true
 execute as @a run function sumo:give_items
 kill @e[type=minecraft:item,nbt={Item:{tag:{w-default-item:1b}}}]
 execute as @e[nbt={Tame:0b}] run item replace entity @s horse.saddle with minecraft:saddle

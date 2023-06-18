@@ -23,6 +23,10 @@ var w-firework-id-test
 /scoreboard objectives add w-firework-enchanted dummy
 
 
+var w-health
+/scoreboard objectives add w-health health "Can"
+
+
 var w-totem-count
 /scoreboard objectives add w-totem-count dummy
 

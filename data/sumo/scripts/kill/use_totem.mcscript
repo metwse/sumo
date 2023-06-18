@@ -3,7 +3,7 @@
 
 
 unless ('entity @s[nbt={Inventory:[{id:"minecraft:dirt",tag:{w-totem:1b}}]}]') {
-    /kill @s[nbt={Inventory:[{id:"minecraft:dirt",tag:{w-totem:1b}}]}]
+    /kill @s
 } else {
     /tellraw @a [{"selector":"@s","color":"yellow","bold":true},{"text":" totem kulllanarak hayatta kaldı.","bold":false}]
     /setblock ~ 255 ~ minecraft:barrel
